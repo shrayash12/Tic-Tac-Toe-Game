@@ -81,16 +81,18 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:weightSum="3">
+
         <Button
             android:id="@+id/btn_0"
             android:layout_width="25dp"
             android:layout_height="90dp"
-            android:background="#2575fc"
-            android:textSize="40sp"
-            android:textColor="#FFFFFF"
-            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_weight="1"
+            android:background="#2575fc"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
         <Button
             android:id="@+id/btn_1"
             android:layout_width="25dp"
