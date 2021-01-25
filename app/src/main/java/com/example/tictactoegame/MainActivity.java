@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button resetButton;
     private int playerOneScoreCount, playerTwoScoreCount, roundCount;
     private boolean activePlayer;
-    int gameState[] = {2, 2, 2, 2, 2, 2, 2, 2,2};
+    int gameState[] = {2, 2, 2, 2, 2, 2, 2, 2, 2};
     int[][] winningPositions = {
             {0, 1, 2}, {3, 4, 5}, {6, 7, 8},//row
             {0, 3, 6}, {1, 4, 7}, {2, 5, 8},//column
@@ -53,13 +53,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
 
-      //  Log.i("id", "buttonClicked");
+        //  Log.i("id", "buttonClicked");
 
         if (!((Button) v).getText().toString().equals("")) {
             return;
         }
         String buttonID = v.getResources().getResourceEntryName(v.getId()); // btn_1
-        int lenght  = buttonID.length();
+        int lenght = buttonID.length();
         int gameStatePointer = Integer.parseInt(buttonID.substring(lenght - 1, lenght));
 
         if (activePlayer) {
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //0
             ((Button) v).setText("0");
             ((Button) v).setTextColor(Color.parseColor("#FFFFFF"));
-             gameState[gameStatePointer] = 1;
+            gameState[gameStatePointer] = 1;
         }
 
         roundCount++;
@@ -97,7 +97,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             activePlayer = !activePlayer;
         }
+        if (playerOneScoreCount > playerTwoScoreCount) {
+            playerStatus.setText("First player is winning!!");
+        } else if (playerTwoScoreCount > playerOneScoreCount) {
+            playerStatus.setText("Second player is winning!!");
 
+        }
 
     }
 
